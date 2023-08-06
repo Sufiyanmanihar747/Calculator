@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculate Here!</h1>
+        <div class="display">
+            <input type="text">
+        </div>
+        <div class="item">
+            <button class="colour button">AC</button>
+            <button class="colour button">^</button>
+            <button class="colour button">%</button>
+            <button class="colour button">/</button>
+        </div>
+        <div class="item">
+            <button class="colour-2 button">7</button>
+            <button class="colour-2 button">8</button>
+            <button class="colour-2 button">9</button>
+            <button class="colour button">*</button>
+        </div>
+        <div class="item">
+            <button class="colour-2 button">4</button>
+            <button class="colour-2 button">5</button>
+            <button class="colour-2 button">6</button>
+            <button class="colour button">-</button>
+        </div>
+        <div class="item">
+            <button class="colour-2 button">1</button>
+            <button class="colour-2 button">2</button>
+            <button class="colour-2 button">3</button>
+            <button class="colour button">+</button>
+        </div>
+        <div class="item">
+            <button class="colour-2 button">0</button>
+            <button class="colour-2 button">00</button>
+            <button class="colour-2 button">.</button>
+            <button class="colour button">=</button>
+        </div>
+    </div>
+    <footer>All Rights Reserve &copy; MADE BY SUFIYAN MANIHAR</footer>
+</body>
+<script>
+    let output = "";
+    let buttons = document.querySelectorAll('.button');
+    Array.from(buttons).forEach((button) => {
+        button.addEventListener('click', (e) => {
+            if (e.target.innerHTML == '=') {
+                output = eval(output);
+                document.querySelector('input').value = output;
+            }
+            else if (e.target.innerHTML == 'AC') {
+                output = ""
+                document.querySelector('input').value = output;
+            }
+            else {
+                console.log(e.target)
+                output = output + e.target.innerHTML;
+                document.querySelector('input').value = output;
+            }
+
+        })
+
+
+    })
+
+</script>
+
+</html>
